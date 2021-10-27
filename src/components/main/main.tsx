@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import * as S from './main-styles'
 
-export const Main = ({ title = 'Desafio Ioasys' }) => (
-  <main>
-    <Title>{title}</Title>
-  </main>
+export const Main = ({
+  title = 'Desafio Ioasys',
+  description = 'Boilerplate para o desafio da Ioasys',
+}) => (
+  <S.Wrapper>
+    <S.Title>{title}</S.Title>
+    <S.Description>{description}</S.Description>
+  </S.Wrapper>
 )
-
-const Title = styled.h1`
-  font-size: 1.75rem;
-`
