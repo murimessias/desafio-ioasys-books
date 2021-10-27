@@ -1,5 +1,11 @@
+import styled from 'styled-components'
+
 export const Main = ({ title = 'Desafio Ioasys' }) => (
   <main>
-    <h1>{title}</h1>
+    <Title>{title}</Title>
   </main>
 )
+
+const Title = styled.h1`
+  font-size: 1.75rem;
+`
