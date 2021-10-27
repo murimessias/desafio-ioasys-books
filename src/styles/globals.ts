@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     src: local('Hebbo Regular'),
           url('/fonts/heebo-v12-latin-regular.woff2') format('woff2');
   }
+
   @font-face {
     font-family: 'Heebo';
     font-style: normal;
@@ -31,12 +32,13 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  html {
-    font-size: 62.5%;
-  }
-
-  body {
-    font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
+  ${({ theme }) => css`
+    html {
+      font-size: 62.5%;
+    }
+    body {
+      font-family: ${theme.font.family};
+    }
+  `}
 `
 export default GlobalStyles

@@ -1,20 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
-  align-items: center;
-  background-color: #111827;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  padding: 3rem;
-  text-align: center;
-  width: 100%;
+  ${({ theme }) => css`
+    align-items: center;
+    background-color: #111827;
+    color: ${theme.colors.white};
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 3rem;
+    text-align: center;
+    width: 100%;
+  `}
 `
 
 export const Title = styled.h1`
-  font-size: 3.2rem;
+  ${({ theme }) => css`
+    font-size: 3.2rem;
+    color: ${theme.colors.accent};
+    line-height: ${theme.leading.tight};
+  `}
 `
 
 export const Description = styled.h2`

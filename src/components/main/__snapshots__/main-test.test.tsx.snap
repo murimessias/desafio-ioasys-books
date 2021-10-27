@@ -7,7 +7,7 @@ exports[`<Main /> should render the heading 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #111827;
-  color: #fff;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,6 +27,8 @@ exports[`<Main /> should render the heading 1`] = `
 
 .c1 {
   font-size: 3.2rem;
+  color: #AB2680;
+  line-height: 1.25;
 }
 
 .c2 {
