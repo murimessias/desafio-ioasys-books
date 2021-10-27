@@ -8,6 +8,20 @@ export const parameters = {
   nextRouter: {
     Provider: RouterContext.Provider
   },
+
+  backgrounds: {
+    default: 'dark',
+    values: [
+      {
+        name: 'light',
+        value: theme.colors.white
+      },
+      {
+        name: 'dark',
+        value: theme.colors.black
+      }
+    ]
+  }
 }
 
 export const decorators = [

@@ -1,6 +1,9 @@
 export default {
   border: {
-    radius: '0.4rem',
+    radius: {
+      md: '0.4rem',
+      rounded: '9999px',
+    },
   },
 
   colors: {

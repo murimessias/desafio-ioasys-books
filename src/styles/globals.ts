@@ -1,6 +1,18 @@
-import { createGlobalStyle, css } from 'styled-components'
+import {
+  createGlobalStyle,
+  css,
+  DefaultTheme,
+  GlobalStyleComponent,
+} from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`
+type GlobalStyleProps = {
+  removeBg?: boolean
+}
+
+const GlobalStyles: GlobalStyleComponent<
+  GlobalStyleProps,
+  DefaultTheme
+> = createGlobalStyle`
   @font-face {
     font-family: 'Heebo';
     font-style: normal;
@@ -32,13 +44,31 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  ${({ theme }) => css`
+  ${({ theme, removeBg }) => css`
     html {
       font-size: 62.5%;
     }
+
     body {
+      color: ${theme.colors.gray};
       font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.sm};
+      line-height: ${theme.leading.normal};
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: ${theme.font.weight.bold};
+    }
+
+    ${!removeBg &&
+    css`
+      background-color: ${theme.colors.black};
+    `}
   `}
 `
 export default GlobalStyles
