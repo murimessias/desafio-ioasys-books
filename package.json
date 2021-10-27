@@ -6,7 +6,10 @@
     "build": "next build",
     "build-storybook": "build-storybook -s ./public",
     "dev": "next dev",
+    "generate": "yarn plop --plopfile generators/plopfile.js",
     "lint": "eslint src --max-warnings=0",
+    "postinstall": "husky install",
+    "prepare": "husky install",
     "start": "next start",
     "test": "jest",
     "test:watch": "yarn test --watch",
@@ -19,9 +22,9 @@
     ]
   },
   "dependencies": {
-    "next": "12.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^12.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -35,8 +38,8 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
-    "@types/node": "16.11.6",
-    "@types/react": "17.0.33",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.33",
     "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
@@ -52,7 +55,8 @@
     "jest": "^27.3.1",
     "jest-styled-components": "^7.0.5",
     "lint-staged": "^11.2.6",
-    "prettier": "2.4.1",
-    "typescript": "4.4.4"
+    "plop": "^2.7.6",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   }
 }
