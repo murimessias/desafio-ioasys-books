@@ -46,6 +46,7 @@ export default {
   },
 
   spacings: {
+    '2xs': '0.8rem',
     xs: '1.6rem',
     sm: '2.4rem',
     md: '3.2rem',
