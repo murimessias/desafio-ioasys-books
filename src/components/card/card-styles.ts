@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    justify-content: center;
     background-color: ${theme.colors.white};
     border-radius: ${theme.border.radius.md};
     box-shadow: 0 0.6rem 2.4rem rgba(84, 16, 95, 0.15);
     cursor: pointer;
     display: flex;
-    max-width: 32rem;
     min-height: 16rem;
     padding: ${theme.spacings.xs} ${theme.spacings['2xs']};
     transition: all 250ms ease-in-out;
@@ -25,17 +26,26 @@ export const Wrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   ${({ theme }) => css`
-    height: 100%;
-    margin-right: ${theme.spacings.xs};
+    display: block;
+    width: 100%;
+    max-width: 10rem;
     position: relative;
+
+    img {
+      box-shadow: 0 0.6rem 2.4rem rgba(84, 16, 95, 0.45);
+    }
+
+    ${media.greaterThan('medium')`
+      margin-right: ${theme.spacings.xs};
+    `}
   `}
 `
 
 export const Content = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
 `
 
 export const MainInfoWrapper = styled.div``

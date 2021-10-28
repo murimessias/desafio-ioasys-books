@@ -21,7 +21,7 @@ export const Card = ({
 }: CardProps) => (
   <S.Wrapper>
     <S.ImageWrapper>
-      <Image src={imageUrl} alt={title} layout='fill' objectFit='cover' />
+      <Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
     </S.ImageWrapper>
 
     <S.Content>
