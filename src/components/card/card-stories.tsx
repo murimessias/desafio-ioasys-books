@@ -6,7 +6,11 @@ export default {
   component: Card,
 } as Meta
 
-export const Default: Story<CardProps> = (args) => <Card {...args} />
+export const Default: Story<CardProps> = (args) => (
+  <div style={{ maxWidth: 400 }}>
+    <Card {...args} />
+  </div>
+)
 
 Default.args = {
   title: 'Hooked',

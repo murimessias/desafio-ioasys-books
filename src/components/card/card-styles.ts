@@ -32,7 +32,7 @@ export const ImageWrapper = styled.div`
     position: relative;
 
     img {
-      box-shadow: 0 0.6rem 2.4rem rgba(84, 16, 95, 0.45);
+      box-shadow: 0 0.4rem 1.2rem rgba(84, 16, 95, 0.25);
     }
 
     ${media.greaterThan('medium')`
