@@ -1,11 +1,5 @@
 import type { NextPage } from 'next'
-import { Main } from 'components'
 
-const Home: NextPage = () => (
-  <Main
-    title='Desafio Ioasys'
-    description='Boilerplate para o desafio da Ioasys'
-  />
-)
+const Home: NextPage = () => <div>ioasys</div>
 
 export default Home
