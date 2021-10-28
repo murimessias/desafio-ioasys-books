@@ -3,6 +3,7 @@ import { RouterContext } from 'next/dist/shared/lib/router-context'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/globals'
 import theme from 'styles/theme'
+import '../.jest/next-image.mock'
 
 export const parameters = {
   nextRouter: {
