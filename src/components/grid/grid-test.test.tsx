@@ -9,7 +9,7 @@ describe('<Grid />', () => {
       .c0 {
         display: grid;
         grid-gap: 1.6rem;
-        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
       }
 
       <div

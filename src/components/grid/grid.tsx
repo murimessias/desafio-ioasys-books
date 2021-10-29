@@ -4,6 +4,6 @@ export const Grid = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-gap: ${theme.spacings.xs};
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   `}
 `

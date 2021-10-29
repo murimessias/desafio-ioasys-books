@@ -42,7 +42,21 @@ const GlobalStyles: GlobalStyleComponent<
     &::after {
       box-sizing: inherit;
     }
+
+    #__next {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
   }
+
+  input[type='text'],
+  input[type='email'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
 
   ${({ theme, removeBg }) => css`
     html {
@@ -51,6 +65,7 @@ const GlobalStyles: GlobalStyleComponent<
 
     body {
       color: ${theme.colors.gray};
+      background-color: ${theme.colors.caramel};
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.sm};
       line-height: ${theme.leading.normal};

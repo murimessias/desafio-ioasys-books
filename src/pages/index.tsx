@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
+import { Login } from 'templates/login'
 
-const Home: NextPage = () => <div>ioasys</div>
+const Index: NextPage = () => <Login />
 
-export default Home
+export default Index
