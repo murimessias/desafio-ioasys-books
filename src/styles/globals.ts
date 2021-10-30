@@ -50,6 +50,7 @@ const GlobalStyles: GlobalStyleComponent<
     }
   }
 
+
   input[type='text'],
   input[type='email'] {
     -webkit-appearance: none;

@@ -72,3 +72,14 @@ export const LogoutButton = styled.button`
     }
   `}
 `
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 120rem;
+  width: 100%;
+
+  ${media.greaterThan('medium')`
+    justify-content: end;
+  `}
+`
