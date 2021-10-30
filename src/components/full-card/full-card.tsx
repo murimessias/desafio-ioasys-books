@@ -30,7 +30,13 @@ export const FullCard = ({
     <S.Wrapper>
       {!!imageUrl && (
         <S.ImageWrapper>
-          <Image src={imageUrl} alt={title} layout='fill' objectFit='cover' />
+          <Image
+            src={imageUrl}
+            alt={title}
+            layout='fill'
+            objectFit='cover'
+            priority={true}
+          />
         </S.ImageWrapper>
       )}
 

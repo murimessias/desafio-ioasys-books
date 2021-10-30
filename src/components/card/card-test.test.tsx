@@ -4,7 +4,7 @@ import theme from 'styles/theme'
 
 import { Card } from '.'
 
-const props = {
+const book = {
   title: 'Hooked',
   authors: ['Nir Eyal', 'Ryan Hoover'],
   imageUrl: '/img/book-img-placeholder.png',
@@ -15,7 +15,7 @@ const props = {
 
 describe('<Card />', () => {
   it('should render the card correctly', () => {
-    const { container } = renderWithTheme(<Card {...props} />)
+    const { container } = renderWithTheme(<Card book={book} />)
 
     expect(screen.getByRole('heading', { name: /hooked/i })).toBeInTheDocument()
 
@@ -23,7 +23,7 @@ describe('<Card />', () => {
   })
 
   it('should render the data correctly', () => {
-    renderWithTheme(<Card {...props} />)
+    renderWithTheme(<Card book={book} />)
 
     expect(screen.getByRole('img')).toBeInTheDocument()
 

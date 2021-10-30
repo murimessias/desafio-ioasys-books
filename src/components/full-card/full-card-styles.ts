@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
     background-color: ${theme.colors.white};
     border-radius: ${theme.border.radius.md};
     box-shadow: 0 0.6rem 2.4rem rgba(84, 16, 95, 0.15);
-    cursor: pointer;
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding: ${theme.spacings.sm};
     transition: all 250ms ease-in-out;
     width: 100%;
@@ -31,16 +31,15 @@ export const Wrapper = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-  display: block;
-  height: 100%;
+  max-width: 36rem;
+  max-height: 36rem;
   position: relative;
-
-  img {
-    box-shadow: 0 0.6rem 2.4rem rgba(84, 16, 95, 0.45);
-  }
+  height: 35.6rem;
+  width: 24rem;
+  box-shadow: 0 0.6rem 2.4rem rgba(84, 16, 95, 0.45);
 
   ${media.greaterThan('medium')`
-    margin-right: 1.6rem;
+    margin-right: 3.2rem;
   `}
 `
 
@@ -49,6 +48,7 @@ export const Content = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 40rem;
 `
 
 export const MainInfoWrapper = styled.div`
@@ -104,20 +104,20 @@ export const Description = styled.blockquote`
   ${({ theme }) => css`
     height: 100%;
 
-    &::-webkit-scrollbar {
-      width: 0.2rem;
+    ::-webkit-scrollbar {
+      width: 0.4rem;
     }
 
-    &::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
       background: transparent;
     }
 
-    &::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
       background: ${theme.colors.accent};
       border-radius: 1rem;
     }
 
-    &::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb:hover {
       background: ${theme.colors.accent};
       filter: contrast(0.9);
     }

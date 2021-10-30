@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'resources/utils/tests/helpers'
 import userEvent from '@testing-library/user-event'
+import { renderWithTheme } from 'resources/utils/tests/helpers'
 
 import { Pagination } from '.'
 
