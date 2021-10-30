@@ -1,15 +1,12 @@
 import Image from 'next/image'
-
 import * as S from './card-styles'
 
-export type CardProps = {
-  title: string
-  authors: string[]
-  imageUrl: string
-  pageCount: number
-  publisher: string
-  published: number
-}
+import { BookProps } from 'resources/types'
+
+export type CardProps = Omit<
+  BookProps,
+  'description' | 'isbn10' | 'isbn13' | 'language'
+>
 
 export const Card = ({
   title,
@@ -20,9 +17,11 @@ export const Card = ({
   published,
 }: CardProps) => (
   <S.Wrapper>
-    <S.ImageWrapper>
-      <Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
-    </S.ImageWrapper>
+    {!!imageUrl && (
+      <S.ImageWrapper>
+        <Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
+      </S.ImageWrapper>
+    )}
 
     <S.Content>
       <S.MainInfoWrapper>

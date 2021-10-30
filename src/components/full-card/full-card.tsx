@@ -1,19 +1,9 @@
 import Image from 'next/image'
-
 import * as S from './full-card-styles'
 
-export type FullCardProps = {
-  title: string
-  authors: string[]
-  description: string
-  imageUrl: string
-  isbn10: string
-  isbn13: string
-  language: string
-  pageCount: number
-  publisher: string
-  published: number
-}
+import { BookProps } from 'resources/types'
+
+export type FullCardProps = BookProps
 
 export const FullCard = ({
   imageUrl,
@@ -38,9 +28,11 @@ export const FullCard = ({
 
   return (
     <S.Wrapper>
-      <S.ImageWrapper>
-        <Image src={imageUrl} alt={title} layout='fill' objectFit='cover' />
-      </S.ImageWrapper>
+      {!!imageUrl && (
+        <S.ImageWrapper>
+          <Image src={imageUrl} alt={title} layout='fill' objectFit='cover' />
+        </S.ImageWrapper>
+      )}
 
       <S.Content>
         <S.MainInfoWrapper>

@@ -1,4 +1,6 @@
-export const cards = [
+import { CardProps } from 'components'
+
+export const cards: CardProps[] = [
   {
     title: 'Hooked',
     authors: ['Nir Eyal', 'Ryan Hoover'],
