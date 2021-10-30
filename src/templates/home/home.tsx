@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
-import { Card, Grid, Logo, Pagination } from 'components'
+import { Card, Grid, Logo, Pagination, Modal } from 'components'
 import * as S from './home-styles'
 
 import { books } from './home-mock'
-import { Modal } from 'components/modal'
 
 export const Home = () => {
   const [page, setPage] = useState(1)

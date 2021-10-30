@@ -1,5 +1,4 @@
-import { Input, Logo } from 'components'
-import { Tooltip } from 'components/tooltip'
+import { Input, Logo, Tooltip } from 'components'
 import * as S from './login-styles'
 
 export const Login = () => (
