@@ -15,7 +15,8 @@ export const Wrapper = styled.div<WrapperProps>`
     padding: 0 ${theme.spacings.xs};
 
     &:focus-within {
-      box-shadow: 0 0 0.5rem ${theme.colors.accent};
+      outline: 0.2rem solid ${theme.colors.caramel};
+      outline-offset: 0.2rem;
     }
   `}
 `
