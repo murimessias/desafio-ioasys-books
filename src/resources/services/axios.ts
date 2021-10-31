@@ -1,7 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import { parseCookies } from 'nookies'
 
-export const getAPIClient = (ctx = undefined) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getAPIClient = (ctx?: any) => {
   const cookies = parseCookies(ctx)
 
   const api = axios.create({
