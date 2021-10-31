@@ -1,13 +1,14 @@
 import { Input, Logo, Tooltip } from 'components'
-import { useContext, useState } from 'react'
-import { AuthContext } from 'resources/context'
+import { useState } from 'react'
+
+import { useUsers } from 'resources/hooks'
 import * as S from './login-styles'
 
 export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { signIn, error } = useContext(AuthContext)
+  const { error, signIn } = useUsers()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()

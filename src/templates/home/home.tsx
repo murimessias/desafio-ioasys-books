@@ -1,46 +1,12 @@
-import { useContext, useEffect, useState } from 'react'
-import { AuthContext } from 'resources/context'
-import { api } from 'resources/services'
-
 import { Logo, Pagination } from 'components'
 import { ListBooks } from 'components/list-books'
 import * as S from './home-styles'
 
-import { BookProps } from 'resources/types'
-import router from 'next/router'
+import { useBooks, useUsers } from 'resources/hooks'
 
 export const Home = () => {
-  const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState(0)
-  const [books, setBooks] = useState<BookProps[]>([])
-
-  const { user, signOut } = useContext(AuthContext)
-
-  useEffect(() => {
-    const getData = async () => {
-      await api
-        .get('/books', {
-          params: {
-            page,
-            amount: 12,
-          },
-        })
-
-        .then((response) => {
-          const books = [...response.data.data]
-          const totalPages = response.data.totalPages
-          const totalPagesToCeil = Math.ceil(totalPages)
-          setBooks(books)
-          setTotalPages(totalPagesToCeil)
-        })
-
-        .catch((error) => {
-          return error
-        })
-    }
-
-    getData()
-  }, [page])
+  const { signOut, user } = useUsers()
+  const { books, page, setPage, totalPages } = useBooks()
 
   const handleAddPage = () => setPage(page + 1)
   const handleRemovePage = () => setPage(page - 1)
@@ -58,11 +24,7 @@ export const Home = () => {
               Bem vindo, <strong>{user?.name}</strong>
             </S.User>
 
-            <S.LogoutButton
-              onClick={() => {
-                signOut(), router.push('/')
-              }}
-            >
+            <S.LogoutButton onClick={signOut}>
               <svg
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'

@@ -5,3 +5,8 @@ export type UserProps = {
   birthdate: string
   gender: 'M' | 'F'
 }
+
+export type SignInData = {
+  email: string
+  password: string
+}
