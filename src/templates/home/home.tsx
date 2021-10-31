@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from 'resources/context'
 import { api } from 'resources/services'
 
-import { Card, Grid, Logo, Pagination } from 'components'
+import { Logo, Pagination } from 'components'
+import { ListBooks } from 'components/list-books'
 import * as S from './home-styles'
 
 import { BookProps } from 'resources/types'
@@ -78,13 +79,7 @@ export const Home = () => {
         </S.Header>
 
         <S.CardsContainer>
-          <Grid>
-            {/* <Modal content={books[0]} /> */}
-
-            {books.map((book, index) => (
-              <Card key={index} book={book} />
-            ))}
-          </Grid>
+          <ListBooks books={books} />
         </S.CardsContainer>
 
         <S.PaginationContainer>

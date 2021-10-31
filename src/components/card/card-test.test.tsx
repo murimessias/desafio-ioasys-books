@@ -4,7 +4,8 @@ import theme from 'styles/theme'
 
 import { Card } from '.'
 
-const book = {
+const cardProps = {
+  onClick: jest.fn(),
   title: 'Hooked',
   authors: ['Nir Eyal', 'Ryan Hoover'],
   imageUrl: '/img/book-img-placeholder.png',
@@ -15,7 +16,7 @@ const book = {
 
 describe('<Card />', () => {
   it('should render the card correctly', () => {
-    const { container } = renderWithTheme(<Card book={book} />)
+    const { container } = renderWithTheme(<Card {...cardProps} />)
 
     expect(screen.getByRole('heading', { name: /hooked/i })).toBeInTheDocument()
 
@@ -23,7 +24,7 @@ describe('<Card />', () => {
   })
 
   it('should render the data correctly', () => {
-    renderWithTheme(<Card book={book} />)
+    renderWithTheme(<Card {...cardProps} />)
 
     expect(screen.getByRole('img')).toBeInTheDocument()
 

@@ -4,38 +4,42 @@ import * as S from './card-styles'
 import { BookProps } from 'resources/types'
 
 export type CardProps = {
-  book: Omit<BookProps, 'description' | 'isbn10' | 'isbn13' | 'language'>
-}
+  onClick: () => void
+} & Omit<BookProps, 'description' | 'isbn10' | 'isbn13' | 'language' | 'id'>
 
-export const Card = ({ book }: CardProps) => (
-  <S.Wrapper>
+export const Card = ({
+  authors,
+  imageUrl,
+
+  pageCount,
+  publisher,
+  published,
+  title,
+  onClick,
+}: CardProps) => (
+  <S.Wrapper onClick={onClick}>
     <S.ImageWrapper>
-      {book.imageUrl ? (
-        <Image
-          src={book.imageUrl}
-          alt={book.title}
-          layout='fill'
-          objectFit='contain'
-        />
+      {imageUrl ? (
+        <Image src={imageUrl} alt={title} layout='fill' objectFit='contain' />
       ) : (
-        <S.ImagePlaceHolder>{book.title}</S.ImagePlaceHolder>
+        <S.ImagePlaceHolder>{title}</S.ImagePlaceHolder>
       )}
     </S.ImageWrapper>
 
     <S.Content>
       <S.MainInfoWrapper>
-        <S.Title>{book.title}</S.Title>
+        <S.Title>{title}</S.Title>
         <S.AuthorsWrapper>
-          {book.authors.map((author, index) => (
+          {authors.map((author, index) => (
             <S.Author key={index}>{author}</S.Author>
           ))}
         </S.AuthorsWrapper>
       </S.MainInfoWrapper>
 
       <S.InfoWrapper>
-        <span>{book.pageCount} páginas</span>
-        <span>Editora {book.publisher}</span>
-        <span>Publicado em {book.published}</span>
+        <span>{pageCount} páginas</span>
+        <span>Editora {publisher}</span>
+        <span>Publicado em {published}</span>
       </S.InfoWrapper>
     </S.Content>
   </S.Wrapper>

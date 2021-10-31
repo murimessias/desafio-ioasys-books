@@ -1,4 +1,5 @@
 export type BookProps = {
+  id: string
   title: string
   authors: string[]
   description: string
