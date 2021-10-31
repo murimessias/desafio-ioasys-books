@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -24,20 +23,34 @@ export const Wrapper = styled.div`
   `}
 `
 
+export const ImagePlaceHolder = styled.div`
+  ${({ theme }) => css`
+    align-items: center;
+    background: ${theme.colors.accent};
+    box-shadow: 0 0.4rem 1.2rem rgba(84, 16, 95, 0.25);
+    color: ${theme.colors.caramel};
+    display: flex;
+    height: 13.2rem;
+    justify-content: center;
+    font-weight: ${theme.font.weight.bold};
+    line-height: ${theme.leading.none};
+    margin: 0 auto;
+    text-align: center;
+    width: 8.8rem;
+  `}
+`
+
 export const ImageWrapper = styled.div`
   ${({ theme }) => css`
     display: block;
-    width: 100%;
+    margin-right: ${theme.spacings.xs};
     max-width: 10rem;
     position: relative;
+    width: 100%;
 
     img {
       box-shadow: 0 0.4rem 1.2rem rgba(84, 16, 95, 0.25);
     }
-
-    ${media.greaterThan('medium')`
-      margin-right: ${theme.spacings.xs};
-    `}
   `}
 `
 
@@ -64,6 +77,7 @@ export const Author = styled.li`
     color: ${theme.colors.accent};
     font-weight: ${theme.font.weight.normal};
     list-style: none;
+    line-height: ${theme.leading.tight};
   `}
 `
 

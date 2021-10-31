@@ -9,16 +9,18 @@ export type CardProps = {
 
 export const Card = ({ book }: CardProps) => (
   <S.Wrapper>
-    {!!book.imageUrl && (
-      <S.ImageWrapper>
+    <S.ImageWrapper>
+      {book.imageUrl ? (
         <Image
           src={book.imageUrl}
           alt={book.title}
           layout='fill'
           objectFit='contain'
         />
-      </S.ImageWrapper>
-    )}
+      ) : (
+        <S.ImagePlaceHolder>{book.title}</S.ImagePlaceHolder>
+      )}
+    </S.ImageWrapper>
 
     <S.Content>
       <S.MainInfoWrapper>
