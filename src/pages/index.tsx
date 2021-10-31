@@ -1,11 +1,25 @@
-import type { NextPage } from 'next'
-import { Main } from 'components'
+import type { GetServerSideProps, NextPage } from 'next'
+import { parseCookies } from 'nookies'
 
-const Home: NextPage = () => (
-  <Main
-    title='Desafio Ioasys'
-    description='Boilerplate para o desafio da Ioasys'
-  />
-)
+import { Login } from 'templates/login'
 
-export default Home
+const Index: NextPage = () => <Login />
+
+export default Index
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { ['@ioasys:token']: cookies } = parseCookies(ctx)
+
+  if (cookies) {
+    return {
+      redirect: {
+        destination: '/books',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {},
+  }
+}

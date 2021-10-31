@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> should render correctly 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFFFFF30;
+  border-radius: 0.4rem;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1;
+  position: relative;
+  padding: 1.6rem 2.4rem;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-animation: jBcSpD 150ms ease-in;
+  animation: jBcSpD 150ms ease-in;
+}
+
+.c0::before {
+  bottom: 100%;
+  border-bottom: 0.8rem solid #FFFFFF30;
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  content: '';
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+<div
+  class="c0"
+>
+  Error
+</div>
+`

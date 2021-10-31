@@ -1,0 +1,13 @@
+export type BookProps = {
+  id: string
+  title: string
+  authors: string[]
+  description: string
+  imageUrl?: string
+  isbn10: string
+  isbn13: string
+  language: string
+  pageCount: number
+  publisher: string
+  published: number
+}
