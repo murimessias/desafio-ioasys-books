@@ -45,6 +45,7 @@ export const LogoContainer = styled.div`
 export const Form = styled.form`
   ${({ theme }) => css`
     width: 100%;
+    height: 20rem;
 
     div + div {
       margin-top: ${theme.spacings.xs};

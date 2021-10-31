@@ -1,17 +1,20 @@
 import { Input, Logo, Tooltip } from 'components'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { AuthContext } from 'resources/context'
 import * as S from './login-styles'
 
 export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const error = 'Email e/ou senha incorreta'
+
+  const { signIn, error } = useContext(AuthContext)
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
 
     const data = { email, password }
-    console.log(data)
+
+    await signIn(data)
   }
 
   return (
@@ -37,7 +40,7 @@ export const Login = () => {
             button='Entrar'
             onInputChange={setPassword}
           />
-          {!!error && <Tooltip error={error} active />}
+          {!!error && <Tooltip error={error} />}
         </S.Form>
       </S.Container>
     </S.Wrapper>

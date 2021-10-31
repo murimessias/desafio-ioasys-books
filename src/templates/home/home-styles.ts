@@ -31,6 +31,7 @@ export const Header = styled.header`
 
 export const LogoContainer = styled.div`
   max-width: 20rem;
+  width: 100%;
 `
 
 export const UserContainer = styled.div`

@@ -1,13 +1,45 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from 'resources/context'
+import { api } from 'resources/services'
 
-import { Card, Grid, Logo, Pagination, Modal } from 'components'
+import { Card, Grid, Logo, Pagination } from 'components'
 import * as S from './home-styles'
 
-import { books } from './home-mock'
+import { BookProps } from 'resources/types'
+import router from 'next/router'
 
 export const Home = () => {
   const [page, setPage] = useState(1)
-  const totalPages = 5
+  const [totalPages, setTotalPages] = useState(0)
+  const [books, setBooks] = useState<BookProps[]>([])
+
+  const { user, signOut } = useContext(AuthContext)
+
+  useEffect(() => {
+    const getData = async () => {
+      await api
+        .get('/books', {
+          params: {
+            page,
+            amount: 12,
+          },
+        })
+
+        .then((response) => {
+          const books = [...response.data.data]
+          const totalPages = response.data.totalPages
+          const totalPagesToCeil = Math.ceil(totalPages)
+          setBooks(books)
+          setTotalPages(totalPagesToCeil)
+        })
+
+        .catch((error) => {
+          return error
+        })
+    }
+
+    getData()
+  }, [page])
 
   const handleAddPage = () => setPage(page + 1)
   const handleRemovePage = () => setPage(page - 1)
@@ -22,10 +54,14 @@ export const Home = () => {
 
           <S.UserContainer>
             <S.User>
-              Bem vindo, <strong>Guilherme!</strong>
+              Bem vindo, <strong>{user?.name}</strong>
             </S.User>
 
-            <S.LogoutButton>
+            <S.LogoutButton
+              onClick={() => {
+                signOut(), router.push('/')
+              }}
+            >
               <svg
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -43,7 +79,7 @@ export const Home = () => {
 
         <S.CardsContainer>
           <Grid>
-            <Modal content={books[0]} />
+            {/* <Modal content={books[0]} /> */}
 
             {books.map((book, index) => (
               <Card key={index} book={book} />
