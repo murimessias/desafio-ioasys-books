@@ -5,16 +5,9 @@ import { Tooltip } from '.'
 
 describe('<Tooltip />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Tooltip error='Error' />)
+    const { container } = renderWithTheme(<Tooltip error='Error' />)
 
-    expect(screen.getByText('Error')).toHaveStyle({ opacity: 0 })
-  })
-
-  it('should render correctly when active', () => {
-    const { container } = renderWithTheme(<Tooltip error='Error' active />)
-
-    expect(screen.getByText('Error')).toHaveStyle({ opacity: 1 })
-
+    expect(screen.getByText('Error')).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })
 })
