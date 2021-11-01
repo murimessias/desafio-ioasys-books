@@ -1,5 +1,4 @@
 import type { GetServerSideProps, NextPage } from 'next'
-
 import { parseCookies } from 'nookies'
 
 import { Home } from 'templates/home'
