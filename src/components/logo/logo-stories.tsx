@@ -2,8 +2,11 @@ import { Story, Meta } from '@storybook/react'
 import { Logo, LogoProps } from '.'
 
 export default {
-  title: 'Logo',
+  title: 'Brand/Logo',
   component: Logo,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta
 
 export const Default: Story<LogoProps> = (args) => (
