@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react'
 import { Pagination, PaginationProps } from '.'
 
 export default {
-  title: 'Layout/Pagination',
+  title: 'Navigation/Pagination',
   component: Pagination,
   argTypes: {
     onAddPage: { action: 'clicked' },
@@ -12,6 +12,7 @@ export default {
     backgrounds: {
       default: 'white',
     },
+    layout: 'centered',
   },
 } as Meta
 

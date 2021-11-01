@@ -5,6 +5,7 @@ import card from './full-card-mock'
 export default {
   title: 'Layout/FullCard',
   component: FullCard,
+  parameters: { layout: 'centered' },
 } as Meta
 
 export const Default: Story<FullCardProps> = (args) => (

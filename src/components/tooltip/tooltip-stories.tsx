@@ -4,6 +4,9 @@ import { Tooltip, TooltipProps } from '.'
 export default {
   title: 'Form/Tooltip',
   component: Tooltip,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta
 
 export const Default: Story<TooltipProps> = (args) => <Tooltip {...args} />

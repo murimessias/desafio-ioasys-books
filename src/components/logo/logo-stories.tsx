@@ -4,6 +4,9 @@ import { Logo, LogoProps } from '.'
 export default {
   title: 'Brand/Logo',
   component: Logo,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta
 
 export const Default: Story<LogoProps> = (args) => (
