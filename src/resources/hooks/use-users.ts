@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { api } from 'resources/services'
 import { SignInData, UserProps } from 'resources/types'
 
-const COOKIES_MAX_AGE = 24 * 60 * 60 * 7
+const COOKIES_MAX_AGE = 24
 
 export const useUsers = () => {
   const [user, setUser] = useState<UserProps | undefined>()
