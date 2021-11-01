@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react'
 import { Tooltip, TooltipProps } from '.'
 
 export default {
-  title: 'Tooltip',
+  title: 'Form/Tooltip',
   component: Tooltip,
 } as Meta
 

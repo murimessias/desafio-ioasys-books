@@ -1,8 +1,12 @@
 import { Story, Meta } from '@storybook/react'
 import { Card, CardProps } from '.'
+import card from './card-mock'
 
 export default {
-  title: 'Card',
+  title: 'Layout/Card',
+  argTypes: {
+    onClick: { action: 'clicked' },
+  },
   component: Card,
 } as Meta
 
@@ -12,11 +16,4 @@ export const Default: Story<CardProps> = (args) => (
   </div>
 )
 
-Default.args = {
-  title: 'Hooked',
-  authors: ['Nir Eyal', 'Ryan Hoover'],
-  imageUrl: '/img/book-img-placeholder.png',
-  pageCount: 150,
-  publisher: 'Loyola',
-  published: 2020,
-}
+Default.args = card

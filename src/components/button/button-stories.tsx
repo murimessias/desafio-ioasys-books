@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react'
 import { Button, ButtonProps } from '.'
 
 export default {
-  title: 'Button',
+  title: 'Form/Button',
   component: Button,
   argTypes: {
     children: {

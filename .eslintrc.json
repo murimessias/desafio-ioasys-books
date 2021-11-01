@@ -28,8 +28,7 @@
   "plugins": [
     "react",
     "react-hooks",
-    "@typescript-eslint",
-    "only-warn"
+    "@typescript-eslint"
   ],
   "rules": {
     "comma-dangle": [
