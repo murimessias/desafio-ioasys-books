@@ -8,7 +8,7 @@ export default {
     title: 'Ioasys | Desafio Front-End',
     images: [
       {
-        url: 'https://desafio-ioasys-books.vercel.app/img/open-graph.png',
+        url: 'https://desafio-ioasys-books.vercel.app/img/ioasys-open-graph.png',
         width: 2560,
         height: 1440,
         alt: 'Ioasys Books',
